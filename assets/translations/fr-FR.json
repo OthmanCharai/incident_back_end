@@ -1,0 +1,52 @@
+{
+    "onboarding_1_title":"Gestion des Incidents",
+    "onboarding_1_body":"Signaler un Incident,Accident,Vol",
+    "onboarding_2_title":"Gestion des observations",
+    "onboarding_2_body":"Enregistrer les actes dangereux, les conditions dangereuses",
+    "onboarding_3_title":"Gestion des audits",
+    "onboarding_3_body":"Dégager les personnes non sont pas confiance",
+    "onboarding_4_title":"Commencer",
+    "onboarding_4_body":"Commencer des maintenant et organiser votre Société",
+    
+    "onboarding_start_button":"Commencer",
+    "onboarding_continu_btn":"Continu",
+    "onboarding_skip":"Passer",
+    "login_email":"Email",
+    "login_email_place_holder":"Email",
+    "login_password":"Mot de passe",
+    "login_password_place_holder":"Mode de passe",
+    "login_welcome":"Bienvenu",
+    "login_login_btn":"connexion",
+    "login_no_account_yet":"Vous n'avez pas encore de compte?",
+    "login_register_btn":"Register",
+    "Ar":"Arabic",
+    "Fr":"Français",
+    "lang":"sélectionnez  votre langue",
+    "empty_email":"le Champ Email est required",
+    "empty_password":"le Champ Mot de pass est required",
+    "agence":"Agence",
+    "ville":"Ville",
+    "Adr":"Address",
+    "adr_place_holder":"Votre Address",
+    "gerant_place_holder":"Nom de Gerant",
+    "gerant":"Gerant",
+    "gsm_1":"GSM 1",
+    "gsm_2":"GSM 2",
+    "gsm_3":"GSM 3",
+    "gsm_1_place_holder":"Votre GSM 1",
+    "gsm_2_place_holder":"Votre GSM 1",
+    "gsm_3_place_holder":"Votre GSM 1",
+    "fix_place_holder":"Votre Fixe ",
+    "phone_place_holder":"Votre phone",
+    "fix":"Fixe",
+    "phone":"Phone",
+    "register_text":"Creer Votre Compte ",
+    "agence_place_holder":"Nom D'agence",
+    "ville_place_holder":"Votre Ville"
+
+
+
+
+
+
+}

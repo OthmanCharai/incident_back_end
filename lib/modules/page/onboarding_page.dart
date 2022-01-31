@@ -31,7 +31,7 @@ class OnBoardingPage extends StatelessWidget {
           PageViewModel(
             title: 'onboarding_3_title'.tr(),
             body: 'onboarding_3_body'.tr(),
-            image: buildImage('assets/images/a3.png'),
+            image: buildImage('assets/images/a2.png'),
             decoration: getPageDecoration(),
           ),
           PageViewModel(

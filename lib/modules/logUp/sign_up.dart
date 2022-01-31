@@ -15,6 +15,8 @@ class SignUp extends StatelessWidget {
   var scaffoldKey = GlobalKey<ScaffoldState>();
   var formkey = GlobalKey<FormState>();
   var second = GlobalKey<FormState>();
+  static String routeName = "/sign_up";
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,7 @@ class SignUp extends StatelessWidget {
                         InputField(
                           title: "agence".tr(),
                           textController: cubit.agence,
+                          type: TextInputType.name,
                           hint: "agence_place_holder".tr(),
                           suffixIcon: Icons.home,
                           validator: (value) {
@@ -77,6 +80,7 @@ class SignUp extends StatelessWidget {
                         InputField(
                           title: "ville".tr(),
                           textController: cubit.ville,
+                          type: TextInputType.name,
                           hint: "ville_place_holder".tr(),
                           suffixIcon: Icons.location_city,
                           validator: (value) {
@@ -93,6 +97,7 @@ class SignUp extends StatelessWidget {
                         InputField(
                           title: "Adr".tr(),
                           textController: cubit.address,
+                          type: TextInputType.streetAddress,
                           hint: "adr_place_holder".tr(),
                           suffixIcon: Icons.local_library_sharp,
                           validator: (value) {
@@ -109,6 +114,7 @@ class SignUp extends StatelessWidget {
                         InputField(
                           title: "gerant".tr(),
                           textController: cubit.gerant,
+                          type: TextInputType.name,
                           hint: "gerant_place_holder".tr(),
                           suffixIcon: Icons.person,
                           validator: (value) {
@@ -124,6 +130,7 @@ class SignUp extends StatelessWidget {
                         ),
                         InputField(
                           title: "gsm_1".tr(),
+                          type: TextInputType.phone,
                           textController: cubit.gsm_1,
                           hint: "gsm_1_place_holder".tr(),
                           suffixIcon: Icons.phone,
@@ -141,6 +148,7 @@ class SignUp extends StatelessWidget {
                         InputField(
                           title: "gsm_2".tr(),
                           textController: cubit.gsm_2,
+                          type: TextInputType.phone,
                           hint: "gsm_2_place_holder".tr(),
                           suffixIcon: Icons.phone,
                           validator: (value) {
@@ -156,6 +164,7 @@ class SignUp extends StatelessWidget {
                         ),
                         InputField(
                           title: "gsm_3".tr(),
+                          type: TextInputType.phone,
                           textController: cubit.gsm_3,
                           hint: "gsm_3_place_holder".tr(),
                           suffixIcon: Icons.phone,
@@ -174,6 +183,7 @@ class SignUp extends StatelessWidget {
                           title: "fix".tr(),
                           textController: cubit.fix,
                           hint: "fix_place_holder".tr(),
+                          type: TextInputType.phone,
                           suffixIcon: Icons.phone,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -190,6 +200,7 @@ class SignUp extends StatelessWidget {
                           title: "phone".tr(),
                           textController: cubit.phone,
                           hint: "phone_place_holder".tr(),
+                          type: TextInputType.phone,
                           suffixIcon: Icons.phone,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -204,6 +215,7 @@ class SignUp extends StatelessWidget {
                         ),
                         InputField(
                           title: "login_email".tr(),
+                          type: TextInputType.emailAddress,
                           textController: cubit.email,
                           hint: "login_email_place_holder".tr(),
                           suffixIcon: Icons.email,
@@ -221,6 +233,7 @@ class SignUp extends StatelessWidget {
                         InputField(
                           isPassword: true,
                           textController: cubit.password,
+                          type: TextInputType.name,
                           title: "login_password".tr(),
                           hint: "login_password_place_holder".tr(),
                           suffixIcon: Icons.password,
@@ -237,8 +250,7 @@ class SignUp extends StatelessWidget {
                         ),
                         _loginBtn(onPressed: () {
                           if (formkey.currentState!.validate()) {
-                            cubit.login(
-                      
+                            cubit.register(
                                 context: context);
                           }
                         }),

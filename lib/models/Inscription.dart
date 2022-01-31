@@ -11,20 +11,16 @@ String inscriptionToJson(Inscription data) => json.encode(data.toJson());
 class Inscription {
     Inscription({
         required this.data,
-        required this.token,
     });
 
     Data data;
-    String token;
 
     factory Inscription.fromJson(Map<String, dynamic> json) => Inscription(
         data: Data.fromJson(json["data"]),
-        token: json["token"],
     );
 
     Map<String, dynamic> toJson() => {
         "data": data.toJson(),
-        "token": token,
     };
 }
 

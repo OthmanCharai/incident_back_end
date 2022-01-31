@@ -23,7 +23,7 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     //Below shows the time like Sep 15, 2021
     return BlocProvider(
-      create: (BuildContext context) => AppCubit(),
+      create: (BuildContext context) => AppCubit()..readToken( context: context),
       child: BlocConsumer<AppCubit, AppState>(
         listener: (context, state) {},
         builder: (context, state) {
@@ -62,6 +62,7 @@ class SignIn extends StatelessWidget {
                         ),
                         InputField(
                           title: "login_email".tr(),
+                          type: TextInputType.emailAddress,
                           textController: cubit.email,
                           hint: "login_email_place_holder".tr(),
                           suffixIcon: Icons.email,
@@ -79,6 +80,7 @@ class SignIn extends StatelessWidget {
                         InputField(
                           isPassword: true,
                           textController: cubit.password,
+                          type: TextInputType.name,
                           title: "login_password".tr(),
                           hint: "login_password_place_holder".tr(),
                           suffixIcon: Icons.password,

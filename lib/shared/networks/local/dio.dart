@@ -36,6 +36,17 @@ class AppDio {
     );
   }
 
+  static Future<Response> postData({
+    required String url,
+    required Map info,
+    required String token,
+  }) async {
+    print(token);
+    return await dio.post(url,
+        data: info,
+        options: Options(headers: {"Authorization": "Bearer $token"}));
+  }
+
   /*
   // Send Verification email
  */
@@ -63,7 +74,7 @@ class AppDio {
     try {
       var response = await dio.get(url,
           options: Options(headers: {"Authorization": "Bearer $token"}));
-      print(response);
+      print(response.data);
       return inscriptionFromJson(jsonEncode(response.data));
     } catch (error) {
       print("hada werrror");

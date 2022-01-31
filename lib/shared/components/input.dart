@@ -13,6 +13,7 @@ class InputField extends StatelessWidget {
   final Function()? onPressed;
   final String? Function(String?)? validator;
   final TextEditingController textController;
+  final TextInputType type;
 
   InputField({
     required this.title,
@@ -22,6 +23,7 @@ class InputField extends StatelessWidget {
     this.isPassword = false,
     required this.validator,
     required this.textController,
+    required this.type
   });
 
   @override
@@ -47,6 +49,7 @@ class InputField extends StatelessWidget {
           child: TextFormField(
             obscureText: isPassword,
             validator: validator,
+            keyboardType: type,
             controller: textController,
             decoration: InputDecoration(
               errorStyle: const TextStyle(fontSize: 0.01),

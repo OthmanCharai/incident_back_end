@@ -42,7 +42,34 @@
     "phone":"Phone",
     "register_text":"Creer Votre Compte ",
     "agence_place_holder":"Nom D'agence",
-    "ville_place_holder":"Votre Ville"
+    "ville_place_holder":"Votre Ville",
+    "verify_email":"S'il vous plaît essayez de vérifier votre e-mail",
+    "firstname":"Prénom",
+    "lastname_place_holder":"prénom",
+    "lastname":"Nom",
+    "firstname_place_holder":"nom",
+    "cin_place_holder":"CIN : QB123456",
+    "ice_place_holder":"ICE : F124D",
+    "rip_place_holder":"RIP : 1234567895200",
+    "gsm_place_holder":"Votre telephone",
+    "note_place_holder":"Entre une Note",
+    "audio_plcae_holder":"Importer un audio",
+    "video_place_holder":"Importer un Video",
+    "type_place_holder":"Le type d'incident ",
+    "cin":"CIN",
+    "ice":"ICE",
+    "rip":"RIP",
+    "gsm":"GSM",
+    "note":"Note",
+    "audio":"Audio",
+    "video":"Video",
+    "type":"Type d incident",
+    "incident_text":"Ajouter un'incident",
+    "suivant":"Suivant",
+    "user_type_place_holder":"Choisir le type  de client",
+    "user_type":"Client Type"
+    
+
 
 
 

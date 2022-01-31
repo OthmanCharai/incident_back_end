@@ -4,13 +4,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
 import 'package:incidence_front/controller/controller.dart';
+import 'package:incidence_front/modules/incident/add_client.dart';
 import 'package:incidence_front/modules/login/sing_in.dart';
 import 'package:incidence_front/modules/page/onboarding_page.dart';
+import 'package:incidence_front/shared/networks/local/dio.dart';
 import 'package:incidence_front/shared/styles/theme.dart';
 import 'package:incidence_front/shared/styles/theme_service.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  AppDio.init();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
           theme: Themes.light,
           darkTheme: Themes.dark,
           themeMode: ThemeService().theme,
-          home: SignIn(),
+          home: OnBoardingPage(),
       ),
     ));
   }

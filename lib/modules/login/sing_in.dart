@@ -21,7 +21,6 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Below shows the time like Sep 15, 2021
     return BlocProvider(
       create: (BuildContext context) => AppCubit()..readToken( context: context),
       child: BlocConsumer<AppCubit, AppState>(
@@ -48,7 +47,7 @@ class SignIn extends StatelessWidget {
                           child: Text(
                             "login_welcome".tr(),
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.josefinSans(
+                            style: GoogleFonts.gothicA1(
                               textStyle: TextStyle(
                                 color: primaryClr,
                                 fontWeight: FontWeight.w800,
@@ -156,7 +155,7 @@ class SignIn extends StatelessWidget {
                                     },
                                     child: Text(
                                       "Ar".tr(),
-                                      style: GoogleFonts.josefinSans(
+                                      style: GoogleFonts.gothicA1(
                                         textStyle: TextStyle(
                                           color: Color(0xff909090),
                                           fontWeight: FontWeight.w800,
@@ -177,7 +176,7 @@ class SignIn extends StatelessWidget {
                                     },
                                     child: Text(
                                       "Fr".tr(),
-                                      style: GoogleFonts.josefinSans(
+                                      style: GoogleFonts.gothicA1(
                                         textStyle: TextStyle(
                                           color: Color(0xff909090),
                                           fontWeight: FontWeight.w800,
@@ -247,7 +246,7 @@ class SignIn extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           "login_login_btn".tr(),
-          style: GoogleFonts.josefinSans(
+          style: GoogleFonts.gothicA1(
             textStyle: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w800,
@@ -263,7 +262,7 @@ class SignIn extends StatelessWidget {
     return Center(
       child: Text(
         label,
-        style: GoogleFonts.josefinSans(
+        style: GoogleFonts.gothicA1(
           textStyle: TextStyle(
             color: textColor,
             fontWeight: FontWeight.w800,
@@ -280,7 +279,7 @@ class SignIn extends StatelessWidget {
       child: Center(
         child: Text(
           label,
-          style: GoogleFonts.josefinSans(
+          style: GoogleFonts.gothicA1(
             textStyle: TextStyle(
               color: textColor,
               fontWeight: FontWeight.w800,

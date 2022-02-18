@@ -4,7 +4,6 @@ import 'package:incidence_front/controller/controller.dart';
 import 'package:incidence_front/modules/login/sing_in.dart';
 
 import 'package:incidence_front/modules/widget/button_widget.dart';
-import 'package:incidence_front/modules/widget/home.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';

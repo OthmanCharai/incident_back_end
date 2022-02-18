@@ -33,10 +33,10 @@ class InputField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: GoogleFonts.josefinSans(
+          style: GoogleFonts.gothicA1(
             textStyle: const TextStyle(
               color: Colors.black,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w500,
               fontSize: 24,
             ),
           ),

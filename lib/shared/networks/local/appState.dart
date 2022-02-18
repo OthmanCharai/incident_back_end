@@ -8,6 +8,24 @@ class ChangeCheckBox extends AppState{}
 class ChangeLangagueState extends AppState{}
 class InvalideUser extends AppState{}
 class VerifyEmail extends AppState{}
+class ShowMessage extends AppState{}
+class UploadsImages extends AppState{}
+class ChangeCurrentIndex extends AppState{}
+class LoadData extends AppState{}
+class SearchCahnge extends AppState{}
+class InitialiseVideo extends AppState{}
+class RecordStopped extends AppState{}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

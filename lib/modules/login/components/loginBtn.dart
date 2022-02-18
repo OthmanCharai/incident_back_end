@@ -16,7 +16,7 @@ Widget _loginBtn() {
       onPressed: () => {},
       child: Text(
         "login_login_btn".tr(),
-        style: GoogleFonts.josefinSans(
+        style: GoogleFonts.gothicA1(
           textStyle: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w800,

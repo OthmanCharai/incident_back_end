@@ -14,21 +14,19 @@ import 'package:easy_localization/easy_localization.dart';
 class AddIncident extends StatelessWidget {
   AddIncident({Key? key}) : super(key: key);
   var formkey = GlobalKey<FormState>();
-  var a = "";
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => AppCubit(),
+      create: (BuildContext context) => AppCubit()..getAllType(),
       child: BlocConsumer<AppCubit, AppState>(
         listener: (context, state) {},
         builder: (context, state) {
           var cubit = AppCubit.get(context);
           context.watch<LanguageController>();
-          a = "user_type".tr();
           return Scaffold(
             backgroundColor: Themes.light.backgroundColor,
-            appBar: _appBar(),
+            appBar: _appBar(context: context),
             body: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: SingleChildScrollView(
@@ -45,7 +43,7 @@ class AddIncident extends StatelessWidget {
                           child: Text(
                             "incident_text".tr(),
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.josefinSans(
+                            style: GoogleFonts.gothicA1(
                               textStyle: TextStyle(
                                 color: primaryClr,
                                 fontWeight: FontWeight.w800,
@@ -67,7 +65,7 @@ class AddIncident extends StatelessWidget {
                             if (value!.isEmpty) {
                               return "empty_email".tr();
                             } else {
-                              cubit.agence.text = value.toString();
+                              cubit.firstname.text = value.toString();
                             }
                           },
                         ),
@@ -84,7 +82,7 @@ class AddIncident extends StatelessWidget {
                             if (value!.isEmpty) {
                               return "empty_email".tr();
                             } else {
-                              cubit.ville.text = value.toString();
+                              cubit.lastname.text = value.toString();
                             }
                           },
                         ),
@@ -101,7 +99,7 @@ class AddIncident extends StatelessWidget {
                             if (value!.isEmpty) {
                               return "empty_email".tr();
                             } else {
-                              cubit.address.text = value.toString();
+                              cubit.cin.text = value.toString();
                             }
                           },
                         ),
@@ -115,7 +113,7 @@ class AddIncident extends StatelessWidget {
                               children: [
                                 Text(
                                   "user_type".tr(),
-                                  style: GoogleFonts.josefinSans(
+                                  style: GoogleFonts.gothicA1(
                                     textStyle: const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w800,
@@ -193,10 +191,9 @@ class AddIncident extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) => AddSociety(
-                                            firstname: cubit.firstname.text,
-                                            lastname:cubit.lastname.text,
-                                            cin:cubit.cin.text
-                                          ),
+                                              firstname: cubit.firstname.text,
+                                              lastname: cubit.lastname.text,
+                                              cin: cubit.cin.text),
                                         ));
                                   }
                                 }
@@ -216,12 +213,16 @@ class AddIncident extends StatelessWidget {
     );
   }
 
-  _appBar() {
+  _appBar({
+    required BuildContext context,
+  }) {
     return AppBar(
       elevation: 0,
       backgroundColor: Themes.light.backgroundColor,
       leading: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.pop(context);
+        },
         child: Icon(Icons.arrow_back_ios, size: 24, color: primaryClr),
       ),
     );
@@ -241,7 +242,7 @@ class AddIncident extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           "login_login_btn".tr(),
-          style: GoogleFonts.josefinSans(
+          style: GoogleFonts.gothicA1(
             textStyle: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w800,
@@ -257,7 +258,7 @@ class AddIncident extends StatelessWidget {
     return Center(
       child: Text(
         label,
-        style: GoogleFonts.josefinSans(
+        style: GoogleFonts.gothicA1(
           textStyle: TextStyle(
             color: textColor,
             fontWeight: FontWeight.w800,

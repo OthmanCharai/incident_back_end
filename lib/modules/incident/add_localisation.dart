@@ -1,26 +1,23 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:incidence_front/controller/controller.dart';
+import 'package:incidence_front/shared/components/button.dart';
 import 'package:incidence_front/shared/components/input.dart';
 import 'package:incidence_front/shared/networks/local/appState.dart';
 import 'package:incidence_front/shared/networks/local/cubit.dart';
 import 'package:incidence_front/shared/styles/theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-class SignUp extends StatelessWidget {
-  SignUp({Key? key}) : super(key: key);
-  var scaffoldKey = GlobalKey<ScaffoldState>();
-  var formkey = GlobalKey<FormState>();
-  var second = GlobalKey<FormState>();
-  static String routeName = "/sign_up";
+
+class AddLocalisation extends StatelessWidget {
+   AddLocalisation({Key? key}) : super(key: key);
+    var formkey = GlobalKey<FormState>();
 
 
   @override
   Widget build(BuildContext context) {
-    //Below shows the time like Sep 15, 2021
     return BlocProvider(
       create: (BuildContext context) => AppCubit(),
       child: BlocConsumer<AppCubit, AppState>(
@@ -29,9 +26,8 @@ class SignUp extends StatelessWidget {
           var cubit = AppCubit.get(context);
           context.watch<LanguageController>();
           return Scaffold(
-            key: scaffoldKey,
             backgroundColor: Themes.light.backgroundColor,
-            appBar: _appBar(),
+            appBar: _appBar(context: context),
             body: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: SingleChildScrollView(
@@ -42,11 +38,11 @@ class SignUp extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 80.0,
+                          height: 50.0,
                         ),
                         Center(
                           child: Text(
-                            "register_text".tr(),
+                            "localisation_text".tr(),
                             textAlign: TextAlign.center,
                             style: GoogleFonts.gothicA1(
                               textStyle: TextStyle(
@@ -62,15 +58,15 @@ class SignUp extends StatelessWidget {
                         ),
                         InputField(
                           title: "agence".tr(),
-                          textController: cubit.agence,
+                          textController: cubit.localisation_agence,
                           type: TextInputType.name,
-                          hint: "agence_place_holder".tr(),
-                          suffixIcon: Icons.home,
+                          hint: "agence".tr(),
+                          suffixIcon: Icons.local_convenience_store,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "empty_email".tr();
                             } else {
-                              cubit.agence.text = value.toString();
+                              cubit.localisation_agence.text = value.toString();
                             }
                           },
                         ),
@@ -79,32 +75,15 @@ class SignUp extends StatelessWidget {
                         ),
                         InputField(
                           title: "ville".tr(),
-                          textController: cubit.ville,
+                          textController: cubit.localisation_ville,
                           type: TextInputType.name,
-                          hint: "ville_place_holder".tr(),
-                          suffixIcon: Icons.location_city,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.ville.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        InputField(
-                          title: "Adr".tr(),
-                          textController: cubit.address,
-                          type: TextInputType.streetAddress,
-                          hint: "adr_place_holder".tr(),
+                          hint: "ville".tr(),
                           suffixIcon: Icons.local_library_sharp,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "empty_email".tr();
                             } else {
-                              cubit.address.text = value.toString();
+                              cubit.localisation_ville.text = value.toString();
                             }
                           },
                         ),
@@ -112,150 +91,120 @@ class SignUp extends StatelessWidget {
                           height: 20.0,
                         ),
                         InputField(
-                          title: "gerant".tr(),
-                          textController: cubit.gerant,
+                          title: "tele_1".tr(),
+                          textController: cubit.localisation_tele_1,
+                          type: TextInputType.phone,
+                          hint: "tele_1_place_holder".tr(),
+                          suffixIcon: Icons.phone,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "empty_email".tr();
+                            } else {
+                              cubit.localisation_tele_1.text = value.toString();
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        InputField(
+                          title: "tele_2".tr(),
+                          textController: cubit.localisation_tele_2,
+                          type: TextInputType.phone,
+                          hint: "tele_2_place_holder".tr(),
+                          suffixIcon: Icons.phone,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "empty_email".tr();
+                            } else {
+                              cubit.localisation_tele_2.text = value.toString();
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        InputField(
+                          title: "tele_3".tr(),
+                          textController: cubit.localisation_tele_3,
+                          type: TextInputType.phone,
+                          hint: "tele_3_place_holder".tr(),
+                          suffixIcon: Icons.phone,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "empty_email".tr();
+                            } else {
+                              cubit.localisation_tele_3.text = value.toString();
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                           InputField(
+                          title: "voiture".tr(),
+                          textController: cubit.voiture,
                           type: TextInputType.name,
-                          hint: "gerant_place_holder".tr(),
-                          suffixIcon: Icons.person,
+                          hint: "voiture_place_holder".tr(),
+                          suffixIcon: Icons.car_rental,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "empty_email".tr();
                             } else {
-                              cubit.gerant.text = value.toString();
+                              cubit.voiture.text = value.toString();
                             }
                           },
                         ),
                         SizedBox(
                           height: 20.0,
                         ),
-                        InputField(
-                          title: "gsm_1".tr(),
-                          type: TextInputType.phone,
-                          textController: cubit.gsm_1,
-                          hint: "gsm_1_place_holder".tr(),
-                          suffixIcon: Icons.phone,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.gsm_1.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        InputField(
-                          title: "gsm_2".tr(),
-                          textController: cubit.gsm_2,
-                          type: TextInputType.phone,
-                          hint: "gsm_2_place_holder".tr(),
-                          suffixIcon: Icons.phone,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.gsm_2.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        InputField(
-                          title: "gsm_3".tr(),
-                          type: TextInputType.phone,
-                          textController: cubit.gsm_3,
-                          hint: "gsm_3_place_holder".tr(),
-                          suffixIcon: Icons.phone,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.gsm_3.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        InputField(
-                          title: "fix".tr(),
-                          textController: cubit.fix,
-                          hint: "fix_place_holder".tr(),
-                          type: TextInputType.phone,
-                          suffixIcon: Icons.phone,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.fix.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        InputField(
-                          title: "phone".tr(),
-                          textController: cubit.phone,
-                          hint: "phone_place_holder".tr(),
-                          type: TextInputType.phone,
-                          suffixIcon: Icons.phone,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.phone.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 50.0,
-                        ),
-                        InputField(
-                          title: "login_email".tr(),
-                          type: TextInputType.emailAddress,
-                          textController: cubit.email,
-                          hint: "login_email_place_holder".tr(),
-                          suffixIcon: Icons.email,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "empty_email".tr();
-                            } else {
-                              cubit.email.text = value.toString();
-                            }
-                          },
-                        ),
-                        SizedBox(
-                          height: 30.0,
-                        ),
-                        InputField(
-                          isPassword: true,
-                          textController: cubit.password,
+                           InputField(
+                          title: "matricule".tr(),
+                          textController: cubit.matricule,
                           type: TextInputType.name,
-                          title: "login_password".tr(),
-                          hint: "login_password_place_holder".tr(),
-                          suffixIcon: Icons.password,
+                          hint: "matricule_place_holder".tr(),
+                          suffixIcon: Icons.car_rental,
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return "empty_password".tr();
+                              return "empty_email".tr();
                             } else {
-                              cubit.password.text = value.toString();
+                              cubit.matricule.text = value.toString();
                             }
                           },
                         ),
                         SizedBox(
-                          height: 50.0,
+                          height: 20.0,
                         ),
-                        _loginBtn(onPressed: () {
-                          if (formkey.currentState!.validate()) {
-                            cubit.register(
-                                context: context);
-                          }
-                        }),
+                           InputField(
+                          title: "couleur".tr(),
+                          textController: cubit.couleur,
+                          type: TextInputType.name,
+                          hint: "couleur_place_holder".tr(),
+                          suffixIcon: Icons.color_lens,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "empty_email".tr();
+                            } else {
+                              cubit.couleur.text = value.toString();
+                            }
+                          },
+                        ),
                         SizedBox(
-                          height: 30.0,
+                          height: 20.0,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            MyButton(
+                              label: "suivant".tr(),
+                              onTap: () {
+                                if (formkey.currentState!.validate()) {
+                                  cubit.createLocalisation(context: context);
+                                }
+                              },
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -269,12 +218,16 @@ class SignUp extends StatelessWidget {
     );
   }
 
-  _appBar() {
+  _appBar({
+    required BuildContext context,
+  }) {
     return AppBar(
       elevation: 0,
       backgroundColor: Themes.light.backgroundColor,
       leading: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.pop(context);
+        },
         child: Icon(Icons.arrow_back_ios, size: 24, color: primaryClr),
       ),
     );
@@ -320,4 +273,5 @@ class SignUp extends StatelessWidget {
       ),
     );
   }
+  
 }

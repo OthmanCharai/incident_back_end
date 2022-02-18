@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:incidence_front/shared/components/size.dart';
+import 'package:incidence_front/shared/styles/theme.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -54,3 +59,31 @@ const secondaryColor = Color(0xFF2A2D3E);
 const bgColor = Color(0xFF212332);
 
 const defaultPadding = 16.0;
+const kSpacingUnit = 10;
+
+const kDarkPrimaryColor = Color(0xFF212121);
+const kDarkSecondaryColor = Color(0xFF373737);
+const kLightPrimaryColor = Color(0xFFFFFFFF);
+const kLightSecondaryColor = Color(0xFFF3F7FB);
+const kAccentColor = Color(0xFFFFC107);
+
+final kTitleTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(kSpacingUnit.w * 1.7).toDouble(),
+  fontWeight: FontWeight.w600,
+);
+
+final kCaptionTextStyle = 
+                             GoogleFonts.josefinSans(
+                              textStyle: TextStyle(
+                                color: primaryClr,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20.0,
+                              ),
+                            )
+                          ;
+
+final kButtonTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(kSpacingUnit.w * 1.5).toDouble(),
+  fontWeight: FontWeight.w400,
+  color: kDarkPrimaryColor,
+);

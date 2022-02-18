@@ -56,7 +56,7 @@ TextStyle get titleTextStle {
 }
 
 TextStyle get subTitleTextStle {
-  return GoogleFonts.lato(
+  return GoogleFonts.gothicA1(
     textStyle: TextStyle(
         fontSize: 16,
         color: Get.isDarkMode ? Colors.grey[400] : Colors.grey[700]),
